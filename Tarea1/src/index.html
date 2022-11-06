@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>Grid Responsivo</title>
+    <link rel="stylesheet" href="src\public\css\main.css" />
+    <style>
+        .grid > div[class*=col-] {
+            border: solid 1px gray;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>This is not a test</h1>
+        <h2>This is a test</h2>
+    </header>
+
+    <div class="container">
+        <button class="button-primary">Click</button>
+        <div class="grid">
+            <h4>This site looks great on</h4>
+            <ul>
+                <li>Tablets</li>
+                <li>Smartphones</li>
+                <li>Computers</li>
+                <li>Even Nintento 3DS systems!</li>
+              </ul> 
+        </div>
+        <div class="grid">
+            <div class="card col-12 col-md-3 col-lg-4">These</div>
+            <div class="col-12 col-md-9 col-lg-4">are</div>
+            <div class="col-12 col-md-6 col-lg-4">Columns</div>
+        </div>
+        <div class="grid">
+            <div class="col-12">Some</div>
+            <div class="col-6">More</div>
+            <div class="col-12">Over</div>
+            <div class="col-6">Here</div>
+        </div>
+        <footer>&copy; Goodbye World!</footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="src\public\css\main.css" type="module"></script>
+</body>
+</html>

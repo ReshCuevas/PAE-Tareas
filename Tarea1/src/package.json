@@ -1,0 +1,24 @@
+{
+  "name": "tarea1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
+    "serve": "gulp serve",
+    "scss": "node-sass scss -o css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.18.2",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "node-sass": "^7.0.3",
+    "sass": "^1.56.0",
+    "typescript": "^4.8.4"
+  }
+}
