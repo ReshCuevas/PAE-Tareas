@@ -1,0 +1,21 @@
+<h1>Noticias:</h1>
+
+<div id="news-container">
+    <div class="grid">
+        {{#each headline}}
+        <div class="xs-100 md-50 lg-33">
+            <h2>{{title}}</h2>
+            <p>{{description}}</p>
+            {{#if urlToImage}}
+            <img src="{{urlToImage}}" alt="" style="max-width: 100%">
+            {{else}}
+            <img src="https://th.bing.com/th/id/OIP.TmXzAfJr8c1Wn2XH7sVpIgHaFu?pid=Api&rs=1" alt="" style="max-width: 100%">
+            {{/if}}
+            <br>            
+            <button class="secondary" onclick="window.location.href='{{url}}'">View details</button>
+        </div>
+        {{else}}
+        <div class="xs-100">No hay elementos para mostrar</div>
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+    <h1 id="heading"><%= title %></h1>
+    <div class="main-container">
+        <div class="main-content">
+            <div id="news-container">
+                <div class="grid">
+                    {{#each headline}}
+                    <div class="xs-100 md-50 lg-33">
+                        <h2>{{title}}</h2>
+                        <p>{{description}}</p>
+                        {{#if urlToImage}}
+                        <img src="{{urlToImage}}" alt="" style="max-width: 100%">
+                        {{else}}
+                        <img src="https://th.bing.com/th/id/OIP.TmXzAfJr8c1Wn2XH7sVpIgHaFu?pid=Api&rs=1" alt="" style="max-width: 100%">
+                        {{/if}}
+                        <br>
+                        <button class="secondary" onclick="window.location.href='{{url}}'">View details</button>
+                    </div>
+                    {{else}}
+                    <div class="xs-100">No hay elementos para mostrar</div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <button id="dark" onclick="changeDark()">Dark Theme</button>
+        <button id="red" onclick="changeRed()">Red Theme</button>
+    </div>
+    <script>
+        localStorage.setItem('apiKey', '<%= apiKey %>');
+    </script>
+    <script src="assets/scripts/app.js" type="module"></script>
+</body>
+
+<script>
+    function changeDark() {
+        if (document.body.className == "default" || document.body.className == "default redTheme") {
+            document.body.className = "default darkTheme";
+            document.getElementById("dark").innerHTML = "Default theme";
+            document.getElementById("red").innerHTML = "Red theme";
+        }
+        else {
+            document.body.className = "default";
+            document.getElementById("dark").innerHTML = "Dark theme";
+        }
+    }
+    function changeRed() {
+        if (document.body.className == "default" || document.body.className == "default darkTheme") {
+            document.body.className = "default redTheme";
+            document.getElementById("red").innerHTML = "Default theme";
+            document.getElementById("dark").innerHTML = "Dark theme";
+        }
+        else {
+            document.body.className = "default"
+            document.getElementById("red").innerHTML = "Red theme";
+        }
+    }
+</script>
+
+</html>

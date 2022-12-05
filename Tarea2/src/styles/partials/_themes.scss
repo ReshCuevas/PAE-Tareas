@@ -1,0 +1,77 @@
+#red{
+    background-color: $button-color-redTheme;
+    border-radius: 5px;
+    border-color: $primary-color-redTheme;
+    color: $text-color-redTheme;
+}
+
+#dark{
+    background-color: $button-color-darkTheme;
+    border-radius: 5px;
+    border-color: $primary-color-darkTheme;
+    color: $text-color-darkTheme;
+}
+
+@mixin darkTheme{
+        background-color: $primary-color-darkTheme;
+    body{
+        & > #red{
+            background-color: $button-color-redTheme;
+            border-radius: 5px;
+            border-color: $primary-color-redTheme;
+        }
+    }
+    
+    button{
+        background-color: $button-color-darkTheme;
+        border-radius: 5px;
+        border-color: $primary-color-darkTheme;
+    }
+    .main-container{
+        & > .main-content, & > .sidenav{
+            background-color: $background-color-darkTheme;
+            color: $text-color-darkTheme;
+        }
+    }
+    
+    .sidenav ul li {
+        color: $text-color-darkTheme;
+        padding: 0 12px;
+        & > a{
+            color: $text-color-darkTheme; 
+        }
+    }
+}
+
+@mixin redTheme{
+    background-color: $primary-color-redTheme;
+    button{
+        background-color: $button-color-redTheme;
+        border-radius: 5px;
+        border-color: $primary-color-redTheme;
+    }
+    .main-container{
+        & > .main-content, & > .sidenav{
+            background-color: $background-color-redTheme;
+            color: $text-color-redTheme;
+        }
+    }
+
+    .sidenav {
+        & > ul, & > li{
+            color: $text-color-redTheme;
+            padding: 0 12px;
+        }
+        & > a{
+            color: $text-color-redTheme; 
+        }
+    }
+}
+
+.darkTheme{
+    @include darkTheme;
+}
+
+.redTheme{
+    @include redTheme;
+}
